@@ -1,0 +1,16 @@
+{
+  "name": "mvcmovie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "daisyui": "^3.6.5",
+    "tailwindcss": "^3.3.3"
+  },
+  "scripts": {
+    "css:build": "npx tailwindcss -i ./wwwroot/css/site.css -o ./wwwroot/css/styles.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
