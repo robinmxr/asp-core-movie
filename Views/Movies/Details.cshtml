@@ -17,9 +17,9 @@
     <div class="card w-100 bg-base-100 text-neutral-content">
         <div class="card-body items-center text-center">
             <h2 class="card-title">@Html.DisplayNameFor(model => model.Title) : @Html.DisplayFor(model => model.Title)</h2>
-            <h2 class="card-title">@Html.DisplayNameFor(model => model.ReleaseDate) : @Html.DisplayFor(model => model.ReleaseDate)</h2>
             <h2 class="card-title">@Html.DisplayNameFor(model => model.Genre) : @Html.DisplayFor(model => model.Genre)</h2>
             <h2 class="card-title">@Html.DisplayNameFor(model => model.Price) : @Html.DisplayFor(model => model.Price)</h2>
+            <h2 class="card-title">@Html.DisplayNameFor(model => model.DirectorId) : @Html.DisplayFor(model => model.Director.Name)</h2>
             <div class="card-actions justify-end mt-lg-2">
                     <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Edit</a>
                     <a asp-action="Index" class="btn btn-ghost">List</a>

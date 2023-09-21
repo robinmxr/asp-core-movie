@@ -23,15 +23,14 @@
                 <th width="20%">
                     @Html.DisplayNameFor(model => model.Title)
                 </th>
-                <th width="20%">
-                    @Html.DisplayNameFor(model => model.ReleaseDate)
-                </th>
+               
                 <th width="20%">
                     @Html.DisplayNameFor(model => model.Genre)
                 </th>
                 <th width="20%">
                     @Html.DisplayNameFor(model => model.Price)
                 </th>
+                <th>Director</th>
                 <th width="20%">Action</th>
             </tr>
             </thead>
@@ -41,15 +40,16 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Title)
                     </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ReleaseDate)
-                    </td>
+                   
                     <td>
                         @Html.DisplayFor(modelItem => item.Genre)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Price)
                     </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Director.Name)
+                        </td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info">Edit</a> 
                         <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Details</a> 

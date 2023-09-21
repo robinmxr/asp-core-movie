@@ -1,4 +1,4 @@
-﻿@model MvcMovie.Models.Movie
+﻿@model MvcMovie.ViewModels.MovieFormViewModel
 
 @{
     ViewData["Title"] = "Edit";
@@ -17,45 +17,50 @@
 
     <form asp-action="Edit" class="my-2 mx-auto">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <input type="hidden" asp-for="Id"/>
+        <input type="hidden" asp-for="Movie.Id"/>
         <div class="form-control w-full max-w-xs">
-            <label asp-for="Title" class="label">
+            <label asp-for="Movie.Title" class="label">
             </label>
-            <input type="text" placeholder="Type here" asp-for="Title" class="input input-bordered w-full max-w-xs" />
+            <input type="text" placeholder="Type here" asp-for="Movie.Title" class="input input-bordered w-full max-w-xs" />
             <label class="label">
-                <span asp-validation-for="Title" class="text-sm text-red-400"></span>
+                <span asp-validation-for="Movie.Title" class="text-sm text-red-400"></span>
+
+            </label>
+        </div>
+       
+        <div class="form-control w-full max-w-xs">
+            <label asp-for="Movie.Genre" class="label">
+            </label>
+            <input type="text" placeholder="Type here" asp-for="Movie.Genre" class="input input-bordered w-full max-w-xs" />
+            <label class="label">
+                <span asp-validation-for="Movie.Genre" class="text-sm text-red-400"></span>
 
             </label>
         </div>
         <div class="form-control w-full max-w-xs">
-            <label asp-for="ReleaseDate" class="label">
+            <label asp-for="Movie.Price" class="label">
             </label>
-            <input asp-for="ReleaseDate" class="input input-bordered w-full max-w-xs" />
+            <input type="text" placeholder="Type here" asp-for="Movie.Price" class="input input-bordered w-full max-w-xs" />
             <label class="label">
-                <span asp-validation-for="ReleaseDate" class="text-sm text-red-400"></span>
+                <span asp-validation-for="Movie.Price" class="text-sm text-red-400"></span>
 
             </label>
         </div>
+
         <div class="form-control w-full max-w-xs">
-            <label asp-for="Genre" class="label">
+            <label asp-for="Movie.DirectorId" class="label">
             </label>
-            <input type="text" placeholder="Type here" asp-for="Genre" class="input input-bordered w-full max-w-xs" />
+            <select asp-for="Movie.DirectorId" class="input input-bordered w-full max-w-xs">
+                @foreach(var item in Model.Directors)
+                {
+                    <option value=@item.Id>@item.Name</option>
+                }
+            </select>
             <label class="label">
-                <span asp-validation-for="Genre" class="text-sm text-red-400"></span>
+                <span asp-validation-for="Movie.DirectorId" class="text-sm text-red-400"></span>
 
             </label>
         </div>
-        <div class="form-control w-full max-w-xs">
-            <label asp-for="Price" class="label">
-            </label>
-            <input type="text" placeholder="Type here" asp-for="Price" class="input input-bordered w-full max-w-xs" />
-            <label class="label">
-                <span asp-validation-for="Price" class="text-sm text-red-400"></span>
-
-            </label>
-        </div>
-
-
 
 
 

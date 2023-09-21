@@ -10,40 +10,28 @@ namespace MvcMovie.Models
             using (var context = new MvcMovieContext(
                        serviceProvider.GetRequiredService<DbContextOptions<MvcMovieContext>>()))
             {
-                if (context.Movie.Any())
+                if (context.Director.Any())
                 {
                     return;
                 }
-                context.Movie.AddRange(
-                    new Movie
+                context.Director.AddRange(
+                    new Director
                     {
-                        Title = "Olympus Has Fallen",
-                        ReleaseDate = DateTime.Parse("1998-2-12"),
-                        Genre = "Thriller",
-                        Price = 7.88m
+                        Name = "Satyajit Roy",
+                        Details = "Indian Director"
 
                     },
-                    new Movie
+                    new Director
                     {
-                        Title = "300",
-                        ReleaseDate = DateTime.Parse("1999-2-15"),
-                        Genre = "Mythology",
-                        Price = 9.88m
+                        Name = "Speilburg",
+                        Details = "US Director"
 
                     },
-                    new Movie
+                    new Director
                     {
-                        Title = "Twelve Angry Men",
-                        ReleaseDate = DateTime.Parse("2001-4-12"),
-                        Genre = "Drama",
-                        Price = 7.56m
-                    },
-                    new Movie
-                    {
-                        Title = "Jaws",
-                        ReleaseDate = DateTime.Parse("1995-2-12"),
-                        Genre = "Thriller",
-                        Price = 8.28m
+                        Name = "Tarantino",
+                        Details = "Canadian Director"
+
                     }
                     );
                 context.SaveChanges();
